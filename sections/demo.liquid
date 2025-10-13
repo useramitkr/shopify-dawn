@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="demoClass">
+    <h1>Hi mere dost</h1>
+  </div>
+
+  {% assign name = 'Amit' %}
+  {% assign surname = 'Kumar' %}
+  {% assign age = 29 %}
+
+  {% assign drive = 18 %}
+  {%- if age >= drive %}
+    <p>{{ name }} is eligible for driving.</p>
+  {% else %}
+    <p>Sorry, {{ name }}, you are not eligible.</p>
+  {% endif %}
+
+  <h2>
+    Hi, {{ name }}, I knwo you are the from the famous "{{ surname }}" family, and your age is {{ age }}. You are
+    eligible for this job.
+  </h2>
+</div>
+
+{% schema %}
+{ "name": "Section Name", "settings": [] }
+{% endschema %}
+
+{% stylesheet %}
+  .container {
+      max-width: 80%;
+      padding: 50px;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
