@@ -1,23 +1,283 @@
 <style type="text/css">
+  /* ---------- GenZ 404 styles ---------- */
+  :root{
+    --g1: #7c4dff;
+    --g2: #00e0a3;
+    --accent-grad: linear-gradient(90deg,var(--g1), #ff416c 50%, var(--g2));
+    --glass: rgba(255,255,255,0.04);
+    --max-width: 1100px;
+    --radius: 14px;
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  .template-404 {
+    min-height: calc(100vh - var(--header-height, 76px));
+    display: grid;
+    place-items: center;
+    padding: clamp(28px, 6vw, 64px);
+    color: white;
+    text-align: center;
+    background: radial-gradient(1200px 600px at 10% 20%, rgba(124,77,255,0.12), transparent 8%),
+                radial-gradient(800px 400px at 90% 80%, rgba(0,224,163,0.08), transparent 8%),
+                linear-gradient(180deg, rgba(7,8,29,1) 0%, rgba(16,12,50,1) 100%);
+  }
+
+  .template-404 .card {
+    width: 100%;
+    max-width: var(--max-width);
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border-radius: var(--radius);
+    padding: clamp(22px, 4.2vw, 36px);
+    box-shadow: 0 20px 60px rgba(2,6,23,0.6);
+    border: 1px solid rgba(255,255,255,0.04);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: center;
+  }
+
+  /* Header / emoji */
+  .template-404 .eyebrow {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .template-404 .emoji {
+    font-size: clamp(44px, 8vw, 72px);
+    line-height: 1;
+    transform-origin: center;
+  }
+  .template-404 .title {
+    margin: 0;
+    font-size: clamp(26px, 4vw, 42px);
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  .template-404 .subtitle {
+    margin: 0;
+    font-size: clamp(14px, 2.2vw, 18px);
+    opacity: 0.92;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* Search pill */
+  .template-404 .search-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6px;
+  }
+  .template-404 .search-input {
+    width: min(680px, 72%);
+    max-width: 680px;
+    min-width: 180px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+    font-weight: 600;
+    color: white;
+    outline: none;
+  }
+  .template-404 .search-input::placeholder { color: rgba(255,255,255,0.7); font-weight:500; }
+
+  .template-404 .search-btn {
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: none;
+    background: var(--accent-grad);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 28px rgba(124,77,255,0.18);
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms;
+  }
+  .template-404 .search-btn:hover { transform: translateY(-3px) scale(1.02); }
+  .template-404 .search-btn:active { transform: translateY(0); }
+
+  /* Buttons */
+  .template-404 .actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .template-404 .btn {
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    letter-spacing: .4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .template-404 .btn--primary {
+    background: var(--accent-grad);
+    color: white;
+    box-shadow: 0 10px 36px rgba(124,77,255,0.12);
+  }
+  .template-404 .btn--ghost {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Optional suggestions row */
+  .template-404 .suggestions {
+    display: grid;
+    gap: 14px;
+    margin-top: 8px;
+    align-items: center;
+  }
+  .template-404 .suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .template-404 .product-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .template-404 .product-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .template-404 .product-card .p-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+  }
+  .template-404 .product-card .p-price {
+    font-weight: 800;
+    font-size: 14px;
+    color: white;
+    opacity: .95;
+  }
+
+  /* small screens */
+  @media screen and (max-width: 749px) {
+    .template-404 .card { padding: 18px; gap: 10px; }
+    .template-404 .search-input { width: 100%; }
+    .template-404 .product-card img { height: 110px; }
+  }
+
+  /* spacing tweaks matching your original margin rules */
   .template-404 .title + * {
     margin-top: 1rem;
   }
-
   @media screen and (min-width: 750px) {
     .template-404 .title + * {
       margin-top: 2rem;
     }
   }
+
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .template-404 .emoji, .template-404 .search-btn, .template-404 .product-card { transition: none !important; animation: none !important; }
+  }
 </style>
 
 <div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+  <div class="card" role="main" aria-labelledby="error-title">
+    <div class="eyebrow" aria-hidden="true">
+      <div class="emoji" id="emoji-404">🫠</div>
+    </div>
+
+    <h1 class="title" id="error-title">
+      {{ 'templates.404.title' | t }}
+    </h1>
+
+    <p class="subtitle" id="error-sub">
+      Can’t find that page — but we found some stuff you might like. Try searching or jump back to shopping.
+    </p>
+
+    <!-- Search form (works even if predictive-search isn't enabled) -->
+    <form class="search-row" action="{{ routes.search_url }}" method="get" role="search" aria-label="Search site">
+      <label for="q-404" class="visually-hidden">{{ 'general.search' | t }}</label>
+      <input id="q-404" class="search-input" name="q" type="search" placeholder="Search products, styles, or drops..." aria-label="Search products">
+      <button type="submit" class="search-btn" aria-label="Search">Search</button>
+    </form>
+
+    <!-- Primary actions -->
+    <div class="actions" role="navigation" aria-label="404 actions">
+      <a class="btn btn--primary" href="{{ routes.all_products_collection_url }}">
+        Browse all products
+      </a>
+
+      <a class="btn btn--ghost" href="{{ routes.root_url }}">
+        Home
+      </a>
+
+      {%- if shop.customer_accounts_enabled %}
+        <a class="btn btn--ghost" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">Your account</a>
+      {%- endif -%}
+    </div>
+
+    <!-- Suggestions (optional): show first 4 products from collection "frontpage" if available -->
+    {%- assign suggested = collections.frontpage.products | slice: 0, 4 -%}
+    {%- if suggested.size > 0 -%}
+      <div class="suggestions" aria-label="Suggested products">
+        <h2 style="margin:0;font-size:14px;font-weight:800;letter-spacing:.6px;color:rgba(255,255,255,0.95)">You might like</h2>
+        <div class="suggestions-grid">
+          {%- for product in suggested -%}
+            <a href="{{ product.url }}" class="product-card" aria-label="{{ product.title }}">
+              {%- assign img = product.featured_image | default: product.images.first -%}
+              {%- if img -%}
+                <img src="{{ img | img_url: '400x' }}" alt="{{ img.alt | escape }}">
+              {%- endif -%}
+              <div class="p-title">{{ product.title }}</div>
+              <div class="p-price">{{ product.price | money }}</div>
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
 </div>
+
+<script>
+  // Micro-interactions: subtle emoji sway + focus helpers
+  (function () {
+    // emoji sway (disabled for reduced-motion)
+    const emoji = document.getElementById('emoji-404');
+    if (emoji && window.matchMedia && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      emoji.animate([
+        { transform: 'rotate(-6deg) translateY(0)' },
+        { transform: 'rotate(6deg) translateY(-6px)' },
+        { transform: 'rotate(-4deg) translateY(0)' }
+      ], {
+        duration: 2400,
+        iterations: Infinity,
+        easing: 'ease-in-out'
+      });
+    }
+
+    // when user hits enter in search, animate the button a tiny pop for feedback
+    const form = document.querySelector('.template-404 form');
+    const btn = document.querySelector('.template-404 .search-btn');
+    if (form && btn) {
+      form.addEventListener('submit', function () {
+        if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+          btn.animate([{ transform: 'scale(1)' }, { transform: 'scale(0.98)' }, { transform: 'scale(1)' }], {
+            duration: 260,
+            easing: 'cubic-bezier(.2,.9,.2,1)'
+          });
+        }
+      });
+    }
+  })();
+</script>
