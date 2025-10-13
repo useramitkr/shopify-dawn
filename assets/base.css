@@ -3595,3 +3595,11 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* New Css  */
+.announcement-bar__message {
+  background-color: red;
+  width: 100%;
+  border-radius: 8px;
+  color: white;
+}
