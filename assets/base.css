@@ -112,7 +112,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
 
   .page-width--narrow {
-    padding: 0 9rem;
+    padding: 0 0rem;
   }
 
   .page-width-desktop {
