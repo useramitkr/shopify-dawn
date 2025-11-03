@@ -1,1 +1,47 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","settings":{"color_scheme":"scheme-1","newsletter_enable":true,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":true,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":36,"padding_bottom":36}}},"order":["footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "custom_liquid_nn6REt": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  /* Styles for the Newsletter Section */\n  .custom-newsletter-section {\n    background-color: #2d2d2d; /* Dark background */\n    color: #ffffff; /* Light text */\n    padding: 70px 30px;\n    text-align: center;\n  }\n  .custom-newsletter-section h2 {\n    font-size: 32px;\n    font-weight: bold;\n    margin-top: 0;\n    margin-bottom: 15px;\n  }\n  .custom-newsletter-section p {\n    font-size: 18px;\n    margin-bottom: 30px;\n    max-width: 600px;\n    margin-left: auto;\n    margin-right: auto;\n    opacity: 0.9;\n  }\n  .newsletter-form-wrapper {\n    max-width: 500px;\n    margin: 0 auto;\n  }\n  .newsletter-form__field-wrapper {\n    display: flex;\n    gap: 10px;\n  }\n  .newsletter-form__field-wrapper .field__input {\n    flex: 1; /* Makes the email field take up available space */\n    padding: 14px 18px;\n    font-size: 16px;\n    border: 1px solid #555;\n    border-radius: 5px;\n    background-color: #444;\n    color: #fff;\n  }\n  .newsletter-form__field-wrapper .field__input::placeholder {\n    color: #aaa;\n  }\n  .newsletter-form__field-wrapper .newsletter-form__button {\n    padding: 14px 24px;\n    font-size: 16px;\n    font-weight: bold;\n    background-color: #ffffff; /* White button */\n    color: white; /* Black text */\n    border: none;\n    border-radius: 5px;\n    cursor: pointer;\n    transition: background-color 0.3s ease;\n  }\n  .newsletter-form__field-wrapper .newsletter-form__button:hover {\n    background-color: grey;\n  }\n\n  /* Responsive styles for mobile */\n  @media (max-width: 768px) {\n    .newsletter-form__field-wrapper {\n      flex-direction: column; /* Stack the field and button on mobile */\n    }\n    .custom-newsletter-section h2 {\n      font-size: 26px;\n    }\n    .custom-newsletter-section p {\n      font-size: 16px;\n    }\n  }\n</style>\n\n<div class=\"custom-newsletter-section\">\n  <h2>Join The Community</h2>\n  <p>Be the first to know about new arrivals, exclusive sales, and get 10% off your first order.</p>\n\n  <div class=\"newsletter-form-wrapper\">\n    {%- form 'customer', id: 'custom-newsletter-form' -%}\n      <input type=\"hidden\" name=\"contact[tags]\" value=\"newsletter\">\n      <div class=\"newsletter-form__field-wrapper\">\n        <div class=\"field\" style=\"flex: 1;\">\n          <input\n            id=\"NewsletterForm-email\"\n            type=\"email\"\n            name=\"contact[email]\"\n            class=\"field__input\"\n            placeholder=\"Enter your email\"\n            aria-required=\"true\"\n            autocorrect=\"off\"\n            autocapitalize=\"off\"\n            autocomplete=\"email\"\n            required\n          >\n        </div>\n        <button type=\"submit\" class=\"newsletter-form__button\">\n          Subscribe\n        </button>\n      </div>\n    {%- endform -%}\n  </div>\n</div>",
+        "color_scheme": "scheme-3",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_nn6REt",
+    "footer"
+  ]
+}
